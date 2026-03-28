@@ -1,6 +1,6 @@
 function WeatherCard({ weather }) {
   return (
-    <div>
+    <div className="weather-card">
       <h2>
         {weather.city}, {weather.country}
       </h2>

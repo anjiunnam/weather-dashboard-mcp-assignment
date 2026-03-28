@@ -9,7 +9,7 @@ function SearchBar({ onSearch }) {
   };
 
   return (
-    <div>
+    <div className="search-bar">
       <input
         type="text"
         placeholder="Enter city name"
