@@ -6,7 +6,15 @@ export async function fetchWeather(city) {
   const response = await fetch(url);
 
   if (!response.ok) {
-    throw new Error("City not found");
+    if (response.status === 401) {
+      throw new Error("API key is invalid or not active yet");
+    }
+
+    if (response.status === 404) {
+      throw new Error("City not found");
+    }
+
+    throw new Error("Something went wrong while fetching weather data");
   }
 
   const data = await response.json();
